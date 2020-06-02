@@ -1,0 +1,45 @@
+Browser always adds some amount of margin/padding to each html element.
+Use universal selector to reset page:
+* {
+    margin: 0;
+    padding: 0;
+}
+
+box-sizing: determines which parts of an element gets included in the size properties of the eleent.
+   -content-box (default) does not include border or padding in size calculations
+   -border-box DOES include border and padding in size of element
+
+vh = view height. Determines what percent of the view height an element should take up.
+For example: { height: 95vh } says take up 95% of the view hight.
+
+background-position: determines where image will be cropped or expanded when window is resized:
+for ex: { background-position: top } will crop from bottom when resized.
+
+background-image: use for gradient, if multiple, list using comma, first in list will be the one on top. 
+clip-path: specifies shape in which element will still be visible. 
+    use polygon function: add coordinates of corners of shape to define shape. Clockwise.
+
+POSITIONING:
+*absolute*: position is determined by its parent container which has a position of relative.
+using top/right etc. refers to putting the top/left part of the element that amount away from the parent element.
+so { top: 50%, right: 50% } will put the top right corner of the element to the center of it's parent's element.
+
+using translate adjusts where the element is in reference to ITSELF.
+so { translate: transform(-50%, -50%) } will move the element 50% up and to the left of its current location.
+
+
+block-level: takes up whole width of occupied space, and create line-break after
+
+ANIMATIONS:
+browsers use opacity and transform
+@keyframes - define an animation 0-100% is start to end. Define what element looks like at each point in time.
+
+add { animation-name: keyframe-defined-name-whatever, animation-duration: 2s } to the class to be animated
+
+other functions: animation-delay, animation-iteration-count, etc.
+
+psuedo-class - special state of an element. 
+
+treated as text: inline-block, text (obv), span
+
+use transition for psuedoclasses - put property on initial state.
