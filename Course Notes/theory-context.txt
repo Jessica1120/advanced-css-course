@@ -1,0 +1,55 @@
+When browser loads:
+1. HTML is loaded and parsed
+2. DOM is created (Document Object Model)
+    - CSS is loaded from HTML headers and parsed
+    - conflicting CSS declartions are resolved (cascade)
+    - calculates final values (ie 50% -> 50px)
+2. CSSOM is created (CSS Object Model)
+
+HOW CSS IS PARSED:
+CASCADE: process of combining different style sheets and resolving conflicts
+between different CSS rules nad declarations when more than 1 rule applies to a certain element
+
+1st: Importance: !User - !Author - Author User - browser
+
+2nd: Specificity: inline - id - classes - elements
+to determine: count number of each on the selector and whichever has more of the most specific will apply
+
+3rd: Source Order: last declaration will be used
+     (most important - put your own stylesheet after any 3rd party stylesheets in html file)
+
+VALUE PROCESSING:
+
+1. Declared - cascaded - specified - computed - used value - actual value
+
+How Units are converted from Relative to absolute:
+
+% of parent
+em of parent's font
+em of current element's length
+rem of root
+vh - % of viewport height
+vw - % of viewport width
+
+INHERITANCE:
+child inherits COMPUTED VALUE (not declared) of parent element. 
+
+inherit keyword -> forces inheritance 
+initial keyword -> resets property to initial value
+
+STACKING CONTEXT: determines which order elements are rendered on page.
+- highest z-index is formost element (unless other properties are set)
+
+ARCHITECT MINDSET
+-component-driven design
+BEM: Block Element Modifier block__element--modifier
+
+7-1 pattern: 7 sass/less folder 1 main file/less
+7 folders: 
+    base-file - basic definitions
+    components - 1 file for each component
+    layout - overall layout of project
+    pages - styles for specific pages
+    themes
+    abstracts - code that doesn't create output ex. mixins
+    vendors

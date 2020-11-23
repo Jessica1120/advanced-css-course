@@ -19,16 +19,6 @@ background-image: use for gradient, if multiple, list using comma, first in list
 clip-path: specifies shape in which element will still be visible. 
     use polygon function: add coordinates of corners of shape to define shape. Clockwise.
 
-POSITIONING:
-*absolute*: position is determined by its parent container which has a position of relative.
-using top/right etc. refers to putting the top/left part of the element that amount away from the parent element.
-so { top: 50%, right: 50% } will put the top right corner of the element to the center of it's parent's element.
-
-using translate adjusts where the element is in reference to ITSELF.
-so { translate: transform(-50%, -50%) } will move the element 50% up and to the left of its current location.
-
-
-block-level: takes up whole width of occupied space, and create line-break after
 
 ANIMATIONS:
 browsers use opacity and transform
@@ -43,3 +33,14 @@ psuedo-class - special state of an element.
 treated as text: inline-block, text (obv), span
 
 use transition for psuedoclasses - put property on initial state.
+
+CONVERTING PX to REM:
+why? easy way to change all measurements at the same time.
+
+rem values are relative to root values.
+root font size = 1 rem
+Ex: root font is 16. font-size: 1.5rem is 24 (16x1.5)
+
+Start with global (root) font size - set in html selector
+note: setting this in px, overrides browser font size, so user cannot change it. (bad practice)
+instead use % of default browser size.

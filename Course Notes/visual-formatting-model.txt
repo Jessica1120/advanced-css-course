@@ -1,0 +1,53 @@
+What is it?
+- Algorithm that calculates boxes and determines the layout of boxes for each element in the render tree, in order to determine the final layout of the page
+Considers:
+Dimensions of boxes: the box model
+Box type (inline, block, inline-block)
+Positioning scheme: floats and positions
+Stacking Context
+Other elements in tree (siblings, parents etc)
+Outside stuff: viewport, imagae dimensions etc.
+
+BOX MODEL:
+Fill Area: content padding and border
+        - gets filled with background color and background image
+
+Default height and width does NOT include padding and border
+box-sizing: border-box -> includes padding and borders
+
+block-level boxes: take up whole width of occupied space, and create line-break after, results in vertical stack
+    { display: block } 
+    { display: flex }
+    { display:list-item }
+    { display: table }
+
+inline boxes: take up only the space it's content needs, no line-break, just sit inside block-level parent
+     box model does not apply so, height and width properties DO NOT APPLY
+     margin/padding ONLY works on left and right
+     { display: inline }
+
+inline-block boxes: take up only space content needs, no line-break
+     box model DOES apply
+
+POSITIONING SCHEMES:
+
+normal flow: 
+    -default, not floated, not absolute
+    -elements laid out according to source order
+    { position: relative }
+
+float:
+ - removed from normal flow - shifted left or right until it touches edge of containing element or another floated element.
+ - text and inline elements will wrap around floated element
+ - container does not adjust its height to element (use clearfix as solution) 
+    - ie: container will collapse, so any non-inherited properties will disappear from any child elements
+
+*absolute*:
+- has no impact on surrounding elements, may overlap other elements
+- position is determined by its parent container which has a position of relative.
+using top/right etc. refers to putting the top/left part of the element that amount away from the parent element.
+so { top: 50%, right: 50% } will put the top right corner of the element to the center of it's parent's element.
+
+using translate adjusts where the element is in reference to ITSELF.
+so { translate: transform(-50%, -50%) } will move the element 50% up and to the left of its current location.
+

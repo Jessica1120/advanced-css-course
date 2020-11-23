@@ -1,0 +1,34 @@
+FEATURES:
+- variables: reusable values
+- nesting
+- operators
+- partials and imports
+- mixins: reusable pieces of CSS code
+- functions: produce values
+- extends: different selectors inherit common declarations 
+- control directives
+
+SYNTAX SASS vs LESS
+defining a variable:
+    sass = $variable 
+    less = @variable
+
+inline comments:
+    both = // comment
+
+NESTING:
+
+HTML:
+<ul class="parent-list">
+    <li class="list-item">
+</ul>
+
+INTENT: access all list-items within parent-list =>
+
+non-nested css:
+.parent-list {
+    color: blue;
+}
+.parent-list .list-item {
+     
+}
